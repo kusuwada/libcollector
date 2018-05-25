@@ -1,0 +1,11 @@
+target_repositories: # owner/repository
+  - kusuwada/libcollector # sample
+
+target_manager: # target manager file
+  - requirements.txt # python
+  - Gemfile # ruby
+  - package.json # javascript
+
+output: # output_type: output_path
+  csv: tmp/test.csv
+  # text: tmp/test.txt
