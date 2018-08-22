@@ -7,5 +7,5 @@ target_manager: # target manager file
   - package.json # javascript
 
 output: # output_type: output_path
-  csv: tmp/test.csv
-  # text: tmp/test.txt
+  csv: test_output.csv
+  # text: test_output.txt
