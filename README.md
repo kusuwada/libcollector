@@ -28,7 +28,6 @@ $ pip install -r requirements.txt
 ### Prepare
 Before use, you have to create your "github access token for commandline", if the target repository is private.  
 See [GitHub Help: Authenticating to GitHub](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).  
-https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/  
 As it says, please select `repo` in scope selection.
 
 ### Basic usage
