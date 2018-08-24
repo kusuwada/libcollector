@@ -1,6 +1,6 @@
 Libcollector
 ====
-Collect name & versions of the used libraries from github repositories．
+Collect name & versions & other information (e.g. license, author) of the used OSS libraries from github repositories．
 
 ## Description
 **`libcollector`** is a python3 commandline tool to collect information of the library which used in specified github repositories.  
@@ -73,6 +73,16 @@ Now, we support bellow formats.
 * text
 
 If you want to export other medias or db, you can add your implementation.
+
+#### information option
+You can specify output optional information bellow or not.
+
+* info_license: library's license
+* info_author: library's author
+* info_homepage_url: library's homepage url
+* info_code_url: library's source code url
+
+If the tool can't get these information, output record becomes empty.
 
 ## License
 Please see the LICENSE file for details.

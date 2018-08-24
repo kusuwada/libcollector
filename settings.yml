@@ -10,6 +10,7 @@ output: # output_type: output_path
   csv: test_output.csv
   # text: test_output.txt
 
+# information option
 info_license: True # get license info or not
 info_author: True
 info_homepage_url: True
