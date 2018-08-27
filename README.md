@@ -13,11 +13,11 @@ TBD
 
 ## Installation
 ### Requirements
-* git   (or download this repository via http)
 * python3
 
 ### Installation
 Get this repository and install required modules.
+
 ```
 $ git clone https://github.com/kusuwada/libcollector.git
 $ cd libcollector

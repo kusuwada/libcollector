@@ -1,5 +1,5 @@
 target_repositories: # owner/repository
-  - rails/rails # sample
+  - vuejs/vue # sample
 
 target_manager: # target manager file
   - requirements.txt # python

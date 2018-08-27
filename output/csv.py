@@ -12,7 +12,8 @@ class Csv(Output):
 
     def write(self):
         with open(self.path, 'w') as f:
-            writer = csv.writer(f, delimiter=',', lineterminator='\n')
-            writer.writerow(self.data[0].__dict__.keys())
-            for item in self.data:
-                writer.writerow(item.__dict__.values())
+            if len(self.data) > 0:
+                writer = csv.writer(f, delimiter=',', lineterminator='\n')
+                writer.writerow(self.data[0].__dict__.keys())
+                for item in self.data:
+                    writer.writerow(item.__dict__.values())
