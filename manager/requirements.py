@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from manager.manager import Manager
 from library_info import LibraryInfo
-
+from manager.manager import Manager
+from index.pypi import Pypi
 
 class Requirements(Manager):
 
@@ -30,5 +30,12 @@ class Requirements(Manager):
                     has_version = True
             if not has_version:
                 info.name = line
+            if Manager.needIndex:
+                pipy = Pypi()
+                index_info = pipy.get_library_info(info.name)
+                info.license = index_info.get('license')
+                info.author = index_info.get('author')
+                info.homepage_url = index_info.get('homepage_url')
+                info.code_url = index_info.get('code_url')
             list.append(info)
         return list

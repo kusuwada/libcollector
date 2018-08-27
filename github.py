@@ -24,8 +24,9 @@ class Github:
         url = Github.BASE_URL + Github.CODE_SEARCH_PATH + query
         header = {
             'Accept': Github.ACCEPT_JSON,
-            'Authorization': 'token ' + self.token,
         }
+        if self.token:
+            header['Authorization'] = 'token ' + self.token
         res = requests.get(url, headers=header)
         for i in res.json()['items']:
             paths.append(i['path'])
@@ -36,8 +37,9 @@ class Github:
         url = Github.BASE_URL + Github.__get_content_path(repo, path)
         header = {
             'Accept': Github.ACCEPT_RAW,
-            'Authorization': 'token ' + self.token,
         }
+        if self.token:
+            header['Authorization'] = 'token ' + self.token
         res = requests.get(url, headers=header)
         return res.text
 
