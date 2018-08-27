@@ -20,7 +20,7 @@ class Github:
         paths = []
         query = '?q=repo:' + repo
         for filename in filenames:
-            query += '+filename:' + filename
+            query += '+filename:"' + filename + '"'
         url = Github.BASE_URL + Github.CODE_SEARCH_PATH + query
         header = {
             'Accept': Github.ACCEPT_JSON,
@@ -29,7 +29,8 @@ class Github:
             header['Authorization'] = 'token ' + self.token
         res = requests.get(url, headers=header)
         for i in res.json()['items']:
-            paths.append(i['path'])
+            if i['name'] in filenames:
+                paths.append(i['path'])
         return paths
 
     # see https://developer.github.com/v3/repos/contents/#get-contents

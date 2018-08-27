@@ -11,5 +11,5 @@ def new_output(output, data, path):
     if output == 'text':
         return Text(output, data, path)
     else:
-        print(output + 'is not supported.')
+        print(output + ' is not supported.')
         return None

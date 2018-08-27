@@ -1,5 +1,6 @@
 target_repositories: # owner/repository
-  - vuejs/vue # sample
+  - kusuwada/libcollector # sample
+#  - vuejs/vue # sample
 
 target_manager: # target manager file
   - requirements.txt # python
@@ -10,8 +11,8 @@ output: # output_type: output_path
   csv: test_output.csv
   # text: test_output.txt
 
-# information option
-info_license: True # get license info or not
+# optional information
+info_license: True
 info_author: True
-info_homepage_url: True
+info_homepage_url: False
 info_code_url: True

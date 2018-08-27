@@ -26,12 +26,16 @@ class Package(Manager):
                 info.manager = Package.MANAGER_NAME
                 info.name = lib
                 info.version = package[kinds][lib]
-                if Manager.needIndex:
+                if Manager.needIndex():
                     npmjs = Npmjs()
                     index_info = npmjs.get_library_info(info.name)
-                    info.license = index_info.get('license')
-                    info.author = index_info.get('author')
-                    info.homepage_url = index_info.get('homepage_url')
-                    info.code_url = index_info.get('code_url')
+                    if Manager.needLicense():
+                        info.license = index_info.get('license')
+                    if Manager.needAuthor():
+                        info.author = index_info.get('author')
+                    if Manager.needHpUrl():
+                        info.homepage_url = index_info.get('homepage_url')
+                    if Manager.needCodeUrl():
+                        info.code_url = index_info.get('code_url')
                 list.append(info)
         return list
