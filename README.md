@@ -1,14 +1,22 @@
 Libcollector
 ====
-Collect name & versions & other information (e.g. license, author) of the used OSS libraries from github repositories．
+Collect name, versions, and other information (e.g. license, author) of the used OSS libraries from github repositories．
 
 ## Description
 **`libcollector`** is a python3 commandline tool to collect information of the library which used in specified github repositories.  
-You can specify repositories which you have Read permission. You can also specify target library manager file types (e.g. `requirement.txt`), and output media.
-Each support type is [bellow](#settings).
+This tool collects libraries from package management files like `requirements.txt` with python or `package.json` in nodejs. The available managers are [bellow](#target_manager).  
+[Optional information](#optional_information) like license or author will collected from each package manager's web api or web site. If it can't find these  information, the optional information will be empty.  
+[You can specify repositories](#target_repositories) which you have Read permission.
 
 ## Demo
-TBD
+
+Here is an execution sample. Target repository is `vuejs/vue`, and output format is csv.
+
+```
+$ python libcollector.py
+```
+
+![demo_vue](https://github.com/kusuwada/libcollector/raw/resources/demo_vue.png)
 
 
 ## Installation
@@ -74,7 +82,7 @@ Now, we support bellow formats.
 
 If you want to export other medias or db, you can add your implementation.
 
-#### information option
+#### optional_information
 You can specify output optional information bellow or not.
 
 * info_license: library's license
