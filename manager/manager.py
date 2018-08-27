@@ -6,6 +6,7 @@ from abc import ABCMeta, abstractmethod
 
 class Manager():
     __metaclass__ = ABCMeta
+    conf = Settings().settings
 
     def __init__(self, manager, data=None):
         self.manager = manager
@@ -16,10 +17,29 @@ class Manager():
         pass
 
     def needIndex():
-        conf = Settings().settings
-        if conf['info_license'] == True or \
-           conf['info_homepage_url'] == True or \
-           conf['info_code_url'] == True or \
-           conf['info_author'] == True:
+        if Manager.conf['info_license'] == True or \
+           Manager.conf['info_author'] == True or \
+           Manager.conf['info_homepage_url'] == True or \
+           Manager.conf['info_code_url'] == True:
+            return True
+        return False
+
+    def needLicense():
+        if Manager.conf['info_license'] == True:
+            return True
+        return False
+
+    def needAuthor():
+        if Manager.conf['info_author'] == True:
+            return True
+        return False
+
+    def needHpUrl():
+        if Manager.conf['info_homepage_url'] == True:
+            return True
+        return False
+
+    def needCodeUrl():
+        if Manager.conf['info_code_url'] == True:
             return True
         return False

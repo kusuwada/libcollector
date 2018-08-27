@@ -14,5 +14,5 @@ def new_manager(manager, data):
     elif manager == 'package_json':
         return Package(manager, data)
     else:
-        print(manager + 'is not supported.')
+        print(manager + ' is not supported.')
         return None

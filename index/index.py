@@ -13,8 +13,8 @@ class Index():
     @abstractmethod
     def get_library_info(self, name):
         """
-        libraryの情報を取得します
-        返却される値はdict型Objectで、下記の情報が入っています
+        return library information.
+        return object format is dict, with follow data.
         (license, author, url)
         """
         pass        

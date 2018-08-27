@@ -11,5 +11,6 @@ class Text(Output):
 
     def write(self):
         with open(self.path, 'w') as f:
-            for item in self.data:
-                f.write(str(item) + '\n')
+            if len(self.data) > 0:
+                for item in self.data:
+                    f.write(str(item) + '\n')

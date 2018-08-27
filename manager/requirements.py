@@ -30,12 +30,16 @@ class Requirements(Manager):
                     has_version = True
             if not has_version:
                 info.name = line
-            if Manager.needIndex:
+            if Manager.needIndex():
                 pipy = Pypi()
                 index_info = pipy.get_library_info(info.name)
-                info.license = index_info.get('license')
-                info.author = index_info.get('author')
-                info.homepage_url = index_info.get('homepage_url')
-                info.code_url = index_info.get('code_url')
+                if Manager.needLicense():
+                    info.license = index_info.get('license')
+                if Manager.needAuthor():
+                    info.author = index_info.get('author')
+                if Manager.needHpUrl():
+                    info.homepage_url = index_info.get('homepage_url')
+                if Manager.needCodeUrl():
+                    info.code_url = index_info.get('code_url')
             list.append(info)
         return list
