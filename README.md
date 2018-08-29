@@ -4,7 +4,7 @@ Collect name, versions, and other information (e.g. license, author) of the used
 
 ## Description
 **`libcollector`** is a python3 commandline tool to collect information of the library which used in specified github repositories.  
-This tool collects libraries from package management files like `requirements.txt` with python or `package.json` in nodejs. The available managers are [bellow](#target_manager).  
+This tool collects libraries from package management files like `requirements.txt` with python or `package.json` in nodejs. The available managers are [below](#target_manager).  
 [Optional information](#optional_information) like license or author will collected from each package manager's web api or web site. If it can't find these  information, the optional information will be empty.  
 [You can specify repositories](#target_repositories) which you have Read permission.
 
@@ -50,7 +50,7 @@ $ python libcollector.py [--token {github_access_token}]
 See and Edit `libcollector/settings.yml`
 
 #### target_repositories
-List of the target repositories. Format is bellow
+List of the target repositories. Format is below
 ```
 {owner}/{repository}
 ```
@@ -64,7 +64,7 @@ target_repositories:
 You can specify both public & private repository. If you specify private repository, see [Prepare](#prepare).
 
 #### target_manager
-List of the target library managers. Now, we support bellow managers.
+List of the target library managers. Now, we support below managers.
 * requirements.txt (python)
 * Gemfile (ruby)
 * package.json (javascript)
@@ -72,18 +72,18 @@ List of the target library managers. Now, we support bellow managers.
 If you want to collect libraries from other manager file, you can add your implementation.
 
 #### output
-List of the export media/formats. Format is bellow.
+List of the export media/formats. Format is below.
 ```
 {output_type}: {output_path}
 ```
-Now, we support bellow formats.
+Now, we support below formats.
 * csv
 * text
 
 If you want to export other medias or db, you can add your implementation.
 
 #### optional_information
-You can specify output optional information bellow or not.
+You can specify output optional information below or not.
 
 * info_license: library's license
 * info_author: library's author
