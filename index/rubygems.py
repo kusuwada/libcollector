@@ -38,7 +38,7 @@ class RubyGems(Index):
         if res.status_code == 200:
             for v in res.json():
                 if v['number'] == version:
-                    info['license'] = v['licenses']
+                    info['license'] = ','.join(v['licenses'])
         # get author and uri information
         url = RubyGems.API_URI + 'gems/' + name + '.json'
         res = requests.get(url)
